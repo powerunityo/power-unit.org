@@ -11,6 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
         //Google Analytics
         (function(w, d, s, l, i) {
@@ -37,6 +38,17 @@
         });
 
     </script>
+	<script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+          }
+        });
+      }
+     </script>
     <script type="text/javascript" src="js/modernizr.js"></script>
 </head>
 
